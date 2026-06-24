@@ -27,14 +27,3 @@ bot.once('spawn', () => {
     }, 180000);
 });
 
-// Переподключение при кике
-bot.on('kicked', (reason) => {
-    console.log("Кикнут, перезапуск через 5 секунд...");
-    setTimeout(() => {
-        process.exit(1); // Хостинг сам перезапустит бота
-    }, 5000);
-});
-
-bot.on('error', (err) => {
-    console.log("Ошибка: ", err);
-});
